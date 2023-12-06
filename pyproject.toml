@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "imagefield-bug"
+version = "0.1.0"
+description = ""
+authors = ["IsmaelP19 <ismaelperezortiz@gmail.com>"]
+readme = "README.md"
+packages = [{include = "imagefield_bug"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+sqlalchemy = "^2.0.23"
+psutil = "^5.9.6"
+pydantic = "^2.5.2"
+psycopg2 = "^2.9.9"
+python-multipart = "^0.0.6"
+python-jose = {version = "^3.3.0", extras = ["cryptography"]}
+passlib = {version = "^1.7.4", extras = ["bcrypt"]}
+starlette-admin = "^0.12.2"
+itsdangerous = "^2.1.2"
+pillow = "^10.1.0"
+fasteners = "^0.19"
+sqlalchemy-file = "^0.6.0"
+alembic = "^1.13.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
