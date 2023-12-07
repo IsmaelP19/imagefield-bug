@@ -16,12 +16,13 @@ SQLALCHEMY_DATABASE_URL = "postgresql://user:password@localhost:5432/exampledb"
 
 Base = declarative_base()
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 
 
 os.makedirs("./media/inst_pictures", exist_ok=True)
 container = LocalStorageDriver("./media").get_container("inst_pictures")
 StorageManager.add_storage("media", container)
+
+
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

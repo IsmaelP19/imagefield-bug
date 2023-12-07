@@ -5,8 +5,10 @@ from sqlalchemy import pool
 
 from alembic import context
 
+from sqlalchemy_file import ImageField
 from app.core.models.database import Base, SQLALCHEMY_DATABASE_URL
 from app.core.models.facilities import *
+from app.core.models.users import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

@@ -23,8 +23,7 @@ class Facilities(Base):
     ins_fea_name = Column(String, nullable=False)
     ins_fea_desc = Column(String)
     users: Mapped[List[User]] = relationship(secondary=facilities_user_association, back_populates="facilities")
-
-    # ins_fea_img = Column(ImageField())
+    ins_fea_img = Column(ImageField())
     # ins_fea_img = Column(String)
 
     async def __admin_repr__(self, request):
@@ -38,9 +37,9 @@ class Facilities(Base):
         self.ins_fea_id = ins_fea_id
         self.ins_fea_name = ins_fea_name
         self.ins_fea_desc = ins_fea_desc
-        # self.ins_fea_img = ins_fea_img
+        self.ins_fea_img = ins_fea_img
 
 class Insts_View(ModelView):
     # exclude_fields_from_list = ['ins_fea_img']
     # exclude_fields_from_detail = ['ins_fea_img']
-    fields = ['ins_fea_id', 'ins_fea_name', 'ins_fea_desc', 'users']
+    fields = ['ins_fea_id', 'ins_fea_name', 'ins_fea_desc', 'ins_fea_img', 'users']
