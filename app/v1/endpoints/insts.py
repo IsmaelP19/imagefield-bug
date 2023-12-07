@@ -23,7 +23,7 @@ def read_inst(inst_id: int, db: Session = Depends(get_db)):
 def read_inst(db: Session = Depends(get_db)):
     insts = get_insts(db)
     if insts is None:
-        raise HTTPException(status_code=404, detail="No facilities are found")
+        raise HTTPException(status_code=404, detail="No facilities found")
     return insts
 
 @router_insts.post("/insts", response_model=schemas.InstCreate)
